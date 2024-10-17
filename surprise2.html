@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devathaa</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+            'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+            sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #e6e2df;
+            background-image: url(https://cdn.wallpapersafari.com/7/83/9z6KMp.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: url(cursor.cur), auto;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        .image-group {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .image-group img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .envelope {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            perspective: 1000px;
+            background: url(https://img.freepik.com/free-photo/quinceanera-assortment-with-empty-card-envelope_23-2148478078.jpg);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.6s ease;
+        }
+
+        .flap {
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            background: url(https://img.freepik.com/free-photo/quinceanera-assortment-with-empty-card-envelope_23-2148478078.jpg);
+            transform-origin: bottom;
+            transition: transform 0.8s ease;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .body {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            height: 50%;
+            background: url(https://img.freepik.com/free-photo/quinceanera-assortment-with-empty-card-envelope_23-2148478078.jpg);
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            z-index: -1;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .letter {
+            top: 20%;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background-color: #98887f;
+            background-image: url(https://img.freepik.com/free-photo/top-view-flowers-with-envelope_23-2148172599.jpg);
+            font-family: "Sedan", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: justify;
+            position: absolute;
+            bottom: 0;
+            z-index: -1;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s, transform 0.5s;
+            overflow-y: auto;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        .letter-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 100px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out 0.5s;
+        }
+
+        .envelope.open .flap {
+            transform: rotateX(-180deg);
+        }
+
+        .envelope.open .letter {
+            opacity: 1;
+            transform: translateY(-120px);
+        }
+
+        .envelope.open .letter-content {
+            opacity: 1;
+        }
+
+        .seal {
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle at 20% 20%, #ff6347, #800000);
+            border-radius: 50%;
+            position: absolute;
+            right: 10px;
+            top: 35px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-group">
+            <img src="p1.jpg" alt="Picture 1">
+            <img src="p2.jpg" alt="Picture 2">
+            <img src="p3.jpg" alt="Picture 3">
+        </div>
+        
+        <div class="envelope" onclick="toggleEnvelope()" onclick="playSound()">
+            <div class="flap"></div>
+            <div class="body"></div>
+            <div class="seal"></div>
+            <div class="letter">
+                <div class="letter-content">
+                    Oyy,<br>
+                    Pandii !!,<br>
+                    Nuvvu naku chala istamaina person!! chala antey chala.. <br>
+                    Oka ammayi tho thakkuva time lo intha close sorry closest avthanu ani eappudu anukoledhu. <br>
+                    Ninnu eappudu devatha devatha ani eandhuku antano thelusaa...nu cringe antav, deng nen nammanu antav, kani<br>
+                    Oka ammai thane ochi natho matladina matladaleni position lo unnapudu occhave nuvvu.
+                    Nuvve matladav, nuvve number icchav, anni efforts pettina patinchukoni lokam ea Idhi
+                    alantidhi nen em effort pettakunda ne vachav, Inka devatha kakapothey inkem antane ninnu ..
+                    Nannu nakantey ekkuva ardam cheskuntav, naku importance isthav❤️. I can be myself at you.
+                    okasari kuda fake levu. Inni qualities unnai ea inka ninnu devatha kakunda em anta cheppu.
+                    Evariki nu eanto naku thelidhu, naku nuvvu devathey.. Ne medha chala love undi.. Love antey nu anukunnedhi kadhule
+                    Idhi friendship,istam,anni ala ela antey nu untey chalu spurthii naku inka em odhu.Koncham ekkuva ayna parledhu opika thechukoni chaduvu
+                    But naku nekanna pedha gift inkoti em undadhu spurthii..1st year lo manchi clg miss cheskoni ee clg ki ochane anukunna
+                    kani ippudu anipisthundhii Nekosam IIT poyna parledhu ani❤️. Sarely ekkuva ayyindhi ani thelusu kani na kosam chaduvu
+                    inka next surprise poyyi chudu..🐼🤍
+                </div>
+            </div>
+        </div>
+
+        <div class="image-group">
+            <img src="p4.jpg" alt="Picture 4">
+            <img src="p5.jpg" alt="Picture 5">
+            <img src="p6.jpg" alt="Picture 6">
+        </div>
+    </div>
+
+    <audio id="backgroundMusic" src="chiru.mp3" type="audio/mp3"></audio>
+    <script>
+        function toggleEnvelope() {
+            var envelope = document.querySelector('.envelope');
+            var music = document.getElementById('backgroundMusic');
+            envelope.classList.toggle('open');
+
+            if (envelope.classList.contains('open')) {
+                music.play();
+            } else {
+                music.pause();
+                music.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>

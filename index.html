@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Devatha!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+            background: linear-gradient(to bottom, #7b9ad4, #558a9b);
+            color: #333;
+            text-align: center;
+            overflow-x: hidden;
+            cursor: url(cursor.cur), auto;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero {
+            position: relative;
+            padding: 80px 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('path_to_your_image.jpg') no-repeat center center/cover;
+            color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: fadeInText 2.5s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 0;
+            animation: fadeInText 3s ease-out;
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .content {
+            margin-top: 60px;
+            animation: slideIn 2s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .content h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #fff;
+            margin: 20px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.3rem;
+            color: #fff;
+            background-color: #4d5995;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 6px 15px rgba(108, 190, 231, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%) rotate(45deg);
+            transition: width 0.4s ease, height 0.4s ease;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            width: 0;
+            height: 0;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(47, 74, 124, 0.6);
+        }
+
+        audio {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>Hey, Pandi!</h1>
+            <p>Okasari Page Title Chudu.</p>
+        </div>
+        <div class="content">
+            <h2>Eanti paina Devatha ani kinda Pandi ani chusthunnava</h2>
+            <p>
+                Hmm! nuvve cheppu naku inka nuvvu kakunda evaru unnaru... nuvve na devatha, nuvve na pandi...
+                anni nuvve. Kani ippudu ee page chesi neku eandhuku pampano neku thelusu, Kani andharila normal ga chepthey
+                Nenu nee BESSTTT FRIEND! ni eandhuku avthane.
+            </p>
+            <p>
+                Evarevaro Birthday ke chesi petta alantidhi na DEVATHA, na PANDI, ma manchi SPURTHI kosam ela chestha!!!
+                Adhi chudalantey kindha button press cheyy edo na nundi chinna surprise...
+            </p>
+            <a href="nav.html" class="btn">Ikkada open cheyyali🤍</a>
+        </div>
+    </div>
+
+    <audio id="backgroundMusic" src="index.mp3" type="audio/mp3"></audio>
+    <script>
+       // JavaScript to play the song after 5 seconds
+       window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('backgroundMusic').play();
+            }, 10000); // 5000ms = 5s
+        };
+    </script>
+</body>
+</html>

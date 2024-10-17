@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Na Devatha!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Caveat', cursive;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #81a5df;
+            color: #eceff6;
+            cursor: url(cursor.cur), auto;
+        }
+
+        .description {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 24px;
+            line-height: 1.5;
+        }
+
+        .nav-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            background-color: #5b85c1;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-button:hover {
+            background-color: #385db5;
+        }
+
+        @media (max-width: 600px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-button {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="description">
+        <p>Oyy! Na devatha kosam em cheddam anukuntuu unna.... </p>
+        <p>So, appude anipinchindhii mana bond start ayyi three years ayyindhii so
+            Ne kosam three surprises chesa...
+            orderwise vellu
+        </p>
+    </div>
+
+    <div class="nav-container">
+        <a href="surprise1.html" class="nav-button">Surprise1</a>
+        <a href="surprise2.html" class="nav-button">Surprise2</a>
+        <a href="surpeise3.html" class="nav-button">Surprise3</a>
+
+        
+    </div>
+</body>
+</html>
